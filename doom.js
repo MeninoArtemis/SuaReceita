@@ -1,19 +1,9 @@
-    let clickCount = 0;
+let clickCount = 0;
 
-    function abrirDoom() {
-      clickCount++; 
-      if (clickCount >= 5) { 
- 
-        window.open("https://js-dos.com/games/doom.exe.html", "_blank");
-
-  
-        const popup = document.getElementById("instructionsPopup");
-        popup.style.display = "block";
-
-        clickCount = 0; 
-      }
-    }
-    function fecharPopup() {
-      const popup = document.getElementById("instructionsPopup");
-      popup.style.display = "none";
-    }
+function abrirDoom() {
+  clickCount++; // Aumenta o contador a cada clique
+  if (clickCount >= 5) {  // Se o número de cliques for 5 ou mais
+    window.location.href = 'doom.html';  // Redireciona para o jogo DOOM
+    clickCount = 0; // Reseta o contador
+  }
+}

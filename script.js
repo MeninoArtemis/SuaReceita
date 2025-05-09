@@ -71,6 +71,7 @@ async function getReceitaDetalhes(id) {
             <button>Enviar Comentário</button>
             </div>   
         `;
+         detalhesDaReceita.scrollIntoView({ behavior: "smooth" });
     } catch (error) {
         detalhesDaReceita.innerHTML = '<p>Erro ao carregar os detalhes da receita.</p>';
         console.error('Erro nos detalhes:', error);
