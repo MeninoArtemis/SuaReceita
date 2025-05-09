@@ -1,4 +1,4 @@
-/* ======== LOGIN PAGE ======== */
+/* LOGIN PAGE  */
 .login-page {
     background-color: #fff0e6;
     display: flex;
@@ -55,7 +55,7 @@
     color: red;
     margin-top: 10px;
   }
-/* ======== FOOTER ======== */
+/*  FOOTER */
 .footer-container {
     background-color: #ff6a28;
     padding: 10px 20px;

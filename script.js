@@ -77,8 +77,8 @@ async function getReceitaDetalhes(id) {
     }
 }
 const loading = document.querySelector('.loading');
-loading.style.display = 'block'; // Mostrar
-loading.style.display = 'none'; // Esconder
+loading.style.display = 'block';
+loading.style.display = 'none'; 
 
 async function carregarPorCategoria(categoria) {
     const resposta = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoria}`);
@@ -86,5 +86,4 @@ async function carregarPorCategoria(categoria) {
     mostraReceitas(data.meals);
   }
   
-  // Carregar comidas padrão na homepage:
   window.onload = () => carregarPorCategoria('Beef');

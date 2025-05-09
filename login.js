@@ -11,7 +11,7 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   
     if (username === userDB.username && password === userDB.password) {
       localStorage.setItem("logado", "true");
-      window.location.href = "home.html"; // Agora redireciona para home.html
+      window.location.href = "home.html"; 
     } else {
       document.getElementById("login-error").innerText = "Usuário ou senha incorretos.";
     }

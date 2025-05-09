@@ -64,7 +64,7 @@ body {
     height: 200px;
     object-fit: cover;
     border-radius: 5px;
-    transition: transform 0.3s ease; /* Suaviza o efeito */
+    transition: transform 0.3s ease; 
 }
 
 .card:hover img {
