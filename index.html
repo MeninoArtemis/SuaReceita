@@ -17,16 +17,36 @@
       <p id="login-error" class="error-msg"></p>
     </form>
   </div>
+
   <div class="footer-container">
     <footer>
-        <p class="copy-footer">&copy; 2025 <a href="#" class="link-footer">Sua Receita</a>. Todos os direitos reservados.</p>
+      <p class="copy-footer">&copy; 2025 <a href="#" class="link-footer">Sua Receita</a>. Todos os direitos reservados.</p>
       <div class="compartilhar">
-        <a href="#" class="facebook" aria-label="Compartilhar no Facebook">F</a>
+        <a href="#" class="facebook" aria-label="Compartilhar no Facebook" onclick="abrirDoom()" id="facebook-link">F</a>
         <a href="#" class="twitter" aria-label="Compartilhar no Twitter">T</a>
         <a href="#" class="whatsapp" aria-label="Compartilhar no WhatsApp">W</a>
       </div>
     </footer>
   </div>
+
+  <!-- Pop-up com as instruções -->
+  <div id="instructionsPopup" class="popup">
+    <button class="close-btn" onclick="fecharPopup()">Fechar</button>
+    <h2>Instruções do Jogo</h2>
+    <div class="instructions">
+      <p>Para jogar DOOM, siga as instruções abaixo:</p>
+      <ul>
+        <li><strong>W</strong> - Andar para frente</li>
+        <li><strong>A</strong> - Andar para a esquerda</li>
+        <li><strong>S</strong> - Andar para trás</li>
+        <li><strong>D</strong> - Andar para a direita</li>
+        <li><strong>Espaço</strong> - Atirar</li>
+        <li><strong>Esc</strong> - Pausar o jogo</li>
+      </ul>
+      <p>Divirta-se!</p>
+    </div>
+  </div>
+  <script src="doom.js"></script> 
   <script src="login.js"></script>
 </body>
 </html>
