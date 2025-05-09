@@ -1,0 +1,114 @@
+/* ======== LOGIN PAGE ======== */
+.login-page {
+    background-color: #fff0e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-container {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .login-logo {
+    width: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .login-container h1 {
+    margin-bottom: 24px;
+    color: #ff914d;
+  }
+  
+  .login-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .login-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ff914d;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .login-container button:hover {
+    background-color: #d45500;
+  }
+  
+  .error-msg {
+    color: red;
+    margin-top: 10px;
+  }
+/* ======== FOOTER ======== */
+.footer-container {
+    background-color: #ff6a28;
+    padding: 10px 20px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.copy-footer {
+    text-align: center;
+}
+
+.link-footer {
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+}
+
+/* Botão de compartilhamento */
+.compartilhar {
+    display: flex;
+    gap: 10px;
+}
+
+.compartilhar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 35px;
+    height: 35px;
+    color: white;
+    background-color: #fa8959;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.compartilhar a:hover {
+    background-color: #be1313;
+}

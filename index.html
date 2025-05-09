@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Sua Receita</title>
+  <link rel="stylesheet" href="login.css" />
+</head>
+<body class="login-page">
+  <div class="login-container">
+    <img src="imagens/sua-receita.jpg" alt="Logo Sua Receita" class="login-logo" />
+    <h1>Entrar no Sua Receita</h1>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Usuário" required />
+      <input type="password" id="password" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
+      <p id="login-error" class="error-msg"></p>
+    </form>
+  </div>
+  <div class="footer-container">
+    <footer>
+        <p class="copy-footer">&copy; 2025 <a href="#" class="link-footer">Sua Receita</a>. Todos os direitos reservados.</p>
+      <div class="compartilhar">
+        <a href="#" class="facebook" aria-label="Compartilhar no Facebook">F</a>
+        <a href="#" class="twitter" aria-label="Compartilhar no Twitter">T</a>
+        <a href="#" class="whatsapp" aria-label="Compartilhar no WhatsApp">W</a>
+      </div>
+    </footer>
+  </div>
+  <script src="login.js"></script>
+</body>
+</html>
