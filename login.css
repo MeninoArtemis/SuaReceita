@@ -24,7 +24,7 @@
   
   .login-container h1 {
     margin-bottom: 24px;
-    color: #ff914d;
+    color: #7c0a0f;
   }
   
   .login-container input {
@@ -38,7 +38,7 @@
   .login-container button {
     width: 100%;
     padding: 12px;
-    background-color: #ff914d;
+    background-color: #7c0a0f;
     color: white;
     font-weight: bold;
     border: none;
@@ -57,7 +57,7 @@
   }
 /*  FOOTER */
 .footer-container {
-    background-color: #ff6a28;
+    background-color: #7c0a0f;
     padding: 10px 20px;
     color: white;
     position: absolute;

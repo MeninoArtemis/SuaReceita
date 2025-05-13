@@ -15,7 +15,7 @@ body {
 /* Header e logo */
 .header {
     position: relative;
-    background-color: #ff6a28;
+    background-color: #7c0a0f;
     height: 80px;
     padding-top: 15px;
     text-align: center;
@@ -90,7 +90,7 @@ body {
 
 .pesquisa-button {
     padding: 10px 20px;
-    background-color: #fa8959;
+    background-color: #ffae2f;
     color: #ddd;
     border: none;
     border-radius: 5px;
@@ -129,7 +129,7 @@ body {
 .receita-detalhada h1 {
     font-size: 36px;
     font-weight: 700;
-    color: #ff6a28;
+    color: #7c0a0f;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -181,7 +181,7 @@ body {
 
 .receita-detalhada a {
     display: inline-block;
-    background-color: #ff6a28;
+    background-color: #7c0a0f;
     color: white;
     padding: 12px 30px;
     border-radius: 30px;
@@ -193,7 +193,7 @@ body {
 }
 
 .receita-detalhada a:hover {
-    background-color: #fa8959;
+    background-color: #ffae2f;
     transform: scale(1.05);
 }
 
@@ -204,7 +204,7 @@ body {
 
 /* Footer */
 .footer-container {
-    background-color: #ff6a28;
+    background-color: #7c0a0f;
     padding: 10px 20px;
     color: white;
 }
@@ -245,7 +245,7 @@ footer p {
     width: 35px;
     height: 35px;
     color: white;
-    background-color: #fa8959;
+    background-color:#ffae2f;
     border-radius: 50%;
     font-weight: bold;
     font-size: 16px;
@@ -273,7 +273,7 @@ footer p {
 }
 
 .comentarios button {
-    background-color: #ff6a28;
+    background-color: #ffae2f;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -290,7 +290,7 @@ footer p {
 
 .btn-anterior,
 .btn-proxima {
-    background-color: #ff6a28;
+    background-color: #ffae2f;
     color: white;
     border: none;
     border-radius: 30px;
@@ -309,13 +309,13 @@ footer p {
 .loading {
     font-size: 18px;
     text-align: center;
-    color: #ff6a28;
+    color:#7c0a0f;
     margin: 20px auto;
 }
 
 h1 {
     text-align: center;
-    color: #ff6a28;
+    color: #7c0a0f;
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 20px;
@@ -339,26 +339,27 @@ li {
 
 .botao {
     text-decoration: none;
-    background-color: #ff6a28;
+    background-color: #7c0a0f;
     color: white;
     padding: 15px;
     font-size: 20px;
     border-radius: 30px;
+    justify-content: space-between;
 }
 .logout-btn{
     text-decoration: none;
-    background-color: #ff6a28;
+    background-color: #7c0a0f;
     color: white;
     padding: 15px;
     font-size: 20px;
     border-radius: 50px;
 
 }
-.logout-btn:hover{background-color: #fa8959;
+.logout-btn:hover{background-color: #be1313;
 
 }
 .botao:hover {
-    background-color: #fa8959;
+    background-color: #be1313;
 }
 
 /* Navegação superior */
@@ -375,7 +376,7 @@ li {
     padding: 8px 15px;
     border: none;
     border-radius: 20px;
-    background-color: #fa8959;
+    background-color: #7c0a0f;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
