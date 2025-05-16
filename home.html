@@ -23,11 +23,12 @@
 <body>
     <div class="header">
         <a href="home.html"class="logo-link"><img  src="imagens/sua-receita.jpg" alt="" class="logo"></a>
+      <div class="barra-superior">
         <form action="" class="pesquisa-form">
             <input type="text"  placeholder="Digite o ingredientes" class="pesquisa-input">
             <button class="pesquisa-button" type="submit">Buscar</button>
-            <button class="logout-btn" onclick="logout()">Sair</button>
-        </form>
+           </form>
+           <button class="logout-btn" onclick="logout()">Sair</button>
         <nav class="nav-bar">
             <div class="categorias">
               <button onclick="carregarPorCategoria('Beef')">Carne</button>
@@ -35,7 +36,7 @@
               <button onclick="carregarPorCategoria('Dessert')">Sobremesas</button>
             </div>
           </nav>
-        
+        </div>
     </div>
     <div class="loading" style="display: none;">Carregando...</div>
     <div class="lista-receitas"></div>

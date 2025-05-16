@@ -3,6 +3,10 @@ const form = document.querySelector('.pesquisa-form');
 const listaDeReceitas = document.querySelector('.lista-receitas');
 const detalhesDaReceita = document.querySelector('.receita-detalhada');
 
+let receitasAtuais =[]
+let paginaAtual = []
+const receitasPorPagina = 10;
+
 form.addEventListener('submit', function (event) {
     event.preventDefault();
     const inputValue = event.target[0].value.trim();
@@ -30,13 +34,70 @@ async function pesquisaReceita(ingrediente) {
     }
 }
 
-function mostraReceitas(receitas) {
-    listaDeReceitas.innerHTML = receitas.map((item) => `
+function mostraReceitas(receitas, pagina = 1) {
+    receitasAtuais = receitas;
+    paginaAtual = pagina;
+
+    const inicio = (pagina - 1) * receitasPorPagina;
+    const fim = inicio + receitasPorPagina;
+    const receitasPaginadas = receitas.slice(inicio, fim);
+
+    listaDeReceitas.innerHTML = receitasPaginadas.map((item) => `
         <div class="card" onclick="getReceitaDetalhes(${item.idMeal})">
             <img src="${item.strMealThumb}" alt="${item.strMeal}" />
             <h1>${item.strMeal}</h1>
         </div>
     `).join('');
+
+    renderizaPaginacao();
+}
+
+function renderizaPaginacao() {
+    const paginacaoContainer = document.createElement("div");
+    paginacaoContainer.className = "paginacao"
+
+    const totalPaginas = Math.ceil(receitasAtuais.length / receitasPorPagina);
+
+    // Botão "Anterior
+    const btnPrev = document.createElement("button");
+    btnPrev.textContent = "Previous"
+    btnPrev.disabled = paginaAtual === 1;
+    btnPrev.onclick = () => mostraReceitas(receitasAtuais, paginaAtual - 1);
+    paginacaoContainer.appendChild(btnPrev);
+
+
+    // Botões de Página
+    const criarBotao = (num) => {
+        const btn = document.createElement("button");
+        btn.textContent = num;
+        if (num === paginaAtual) btn.style.backgroundColor = "#ff6a28";
+        btn.onclick = () => mostraReceitas(receitasAtuais, num);
+        paginacaoContainer.appendChild(btn);
+    };
+
+    if (totalPaginas <= 7) {
+        for (let i = 1; i <= totalPaginas; i++) criarBotao(i);
+
+    } else {
+        criarBotao(1);
+        if (paginaAtual > 3) paginacaoContainer.appendChild(document.createTextNode("..."));
+
+        const start = Math.max(2, paginaAtual - 1);
+        const end = Math.min(totalPaginas - 1, paginaAtual +1);
+        for (let i = start; i <= end; i++) criarBotao(i);
+
+        if (paginaAtual < totalPaginas - 2) paginacaoContainer.appendChild(document.createTextNode("..."));
+        criarBotao(totalPaginas);
+    }
+
+    // Botão Próximo
+    const btnNext = document.createElement("button");
+    btnNext.textContent = "Next";
+    btnNext.disabled = paginaAtual === totalPaginas;
+    btnNext.onclick = () => mostraReceitas(receitasAtuais, paginaAtual + 1);
+    paginacaoContainer.appendChild(btnNext);
+
+    listaDeReceitas.appendChild(paginacaoContainer);    
 }
 
 async function getReceitaDetalhes(id) {
@@ -78,8 +139,8 @@ async function getReceitaDetalhes(id) {
     }
 }
 const loading = document.querySelector('.loading');
-loading.style.display = 'block';
-loading.style.display = 'none'; 
+document.querySelector(".loading").style.display = "block"; // aparecer loading ao buscar ou carregar
+document.querySelector(".loading").style.display = "none";
 
 async function carregarPorCategoria(categoria) {
     const resposta = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoria}`);
