@@ -1,0 +1,11 @@
+No dia 07/06/2025 o projeto encontra-se em atualização, sem acesso admin, foi criado o acesso V1perzin para teste de login.Add commentMore actions
+Baixei o projeto no meu computador e para realização de login realizaei os seguintes comandos para teste e saber se estava rodando antes de abrir no navegador:
+"Cd backend" após isso o "node serve.js" deverá aparecer a mensagem "Backend rodando em http://localhost:3000" toda vez que rodar o projeto tem que fazer o comando de "node serve.js"
+
+Correções na pasta "index.html" e "resgistre" correções nos nomes registre.html e registre.js.
+
+Atualizando a tela de login
+
+Centralizando a tela de cadastro e adicionando CSS a ele.
+
+Imagemd de cadastro e login ajustados
