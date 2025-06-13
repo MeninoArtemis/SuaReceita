@@ -5,9 +5,8 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
-  
-  .login-container {
+}
+.login-container {
     background-color: white;
     padding: 40px 30px;
     border-radius: 12px;
@@ -15,27 +14,23 @@
     width: 100%;
     max-width: 400px;
     text-align: center;
-  }
-  
-  .login-logo {
+}
+.login-logo {
     width: 100px;
     margin-bottom: 20px;
-  }
-  
-  .login-container h1 {
+}
+.login-container h1 {
     margin-bottom: 24px;
     color: #7c0a0f;
-  }
-  
-  .login-container input {
+}
+.login-container input {
     width: 100%;
     padding: 12px;
     margin-bottom: 16px;
     border-radius: 6px;
     border: 1px solid #ccc;
-  }
-  
-  .login-container button {
+}
+.login-container button {
     width: 100%;
     padding: 12px;
     background-color: #7c0a0f;
@@ -45,17 +40,15 @@
     border-radius: 6px;
     cursor: pointer;
     transition: 0.3s;
-  }
-  
-  .login-container button:hover {
+}
+.login-container button:hover {
     background-color: #d45500;
-  }
-  
-  .error-msg {
+}
+.error-msg {
     color: red;
     margin-top: 10px;
-  }
-/*  FOOTER */
+}
+/* FOOTER */
 .footer-container {
     background-color: #7c0a0f;
     padding: 10px 20px;
@@ -65,35 +58,28 @@
     width: 100%;
     text-align: center;
 }
-
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 50px;
 }
-
 footer p {
     margin: 0;
     font-weight: bold;
 }
-
 .copy-footer {
     text-align: center;
 }
-
 .link-footer {
     font-weight: 700;
     text-decoration: none;
     color: white;
 }
-
-/* Botão de compartilhamento */
 .compartilhar {
     display: flex;
     gap: 10px;
 }
-
 .compartilhar a {
     display: flex;
     align-items: center;
@@ -108,12 +94,9 @@ footer p {
     font-size: 16px;
     transition: background-color 0.3s ease;
 }
-
 .compartilhar a:hover {
     background-color: #be1313;
 }
-
-/* Popup */
 .popup {
     display: none;
     position: fixed;
@@ -127,7 +110,6 @@ footer p {
     z-index: 1000;
     text-align: center;
 }
-
 .popup .close-btn {
     background-color: red;
     color: white;
@@ -135,11 +117,9 @@ footer p {
     padding: 5px 10px;
     cursor: pointer;
 }
-
 .popup .instructions {
     margin-top: 20px;
 }
-
 html, body {
     height: 100%;
     margin: 0;

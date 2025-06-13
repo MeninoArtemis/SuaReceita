@@ -1,5 +1,4 @@
 // script.js
-
 if (localStorage.getItem('logado') !== 'true') {
   window.location.href = 'index.html';
 }
@@ -135,7 +134,6 @@ async function getReceitaDetalhes(id) {
       }
     }
 
-    // Buscar comentários do backend
     const comentariosRes = await fetch(`http://localhost:3000/api/comments/${id}`);
     const comentarios = await comentariosRes.json();
 
@@ -166,7 +164,6 @@ async function getReceitaDetalhes(id) {
     `;
     detalhesDaReceita.scrollIntoView({ behavior: 'smooth' });
 
-    // Adicionar listener do botão enviar comentário
     document.getElementById('enviar-comentario').onclick = async () => {
       const text = document.getElementById('comentario-texto').value.trim();
       if (!text) return alert('Digite um comentário.');
@@ -179,7 +176,7 @@ async function getReceitaDetalhes(id) {
         });
         if (res.ok) {
           alert('Comentário enviado!');
-          getReceitaDetalhes(id); // atualizar comentários
+          getReceitaDetalhes(id);
         } else {
           alert('Erro ao enviar comentário.');
         }
@@ -205,5 +202,4 @@ async function carregarPorCategoria(categoria) {
   loading.style.display = 'none';
 }
 
-// Carrega categoria Beef na inicialização
 window.onload = () => carregarPorCategoria('Beef');
