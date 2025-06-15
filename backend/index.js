@@ -78,3 +78,35 @@ app.listen(PORT, () => {
 document.getElementById('logoutBtn').addEventListener('click', function() {
   window.location.href = "login.html"; // ou o caminho correto do seu login
 });
+// Update comentário
+app.put('/api/comments/:id/:commentIndex', (req, res) => {
+  const { id, commentIndex } = req.params;
+  const { text } = req.body;
+
+  const comments = readJSON(commentsPath);
+
+  if (!comments[id] || !comments[id][commentIndex]) {
+    return res.status(404).json({ message: 'Comentário não encontrado.' });
+  }
+
+  comments[id][commentIndex].text = text;
+  comments[id][commentIndex].date = new Date().toISOString();
+
+  writeJSON(commentsPath, comments);
+  res.json(comments[id][commentIndex]);
+});
+
+// Delete comentário
+app.delete('/api/comments/:id/:commentIndex', (req, res) => {
+  const { id, commentIndex } = req.params;
+
+  const comments = readJSON(commentsPath);
+
+  if (!comments[id] || !comments[id][commentIndex]) {
+    return res.status(404).json({ message: 'Comentário não encontrado.' });
+  }
+
+  comments[id].splice(commentIndex, 1);
+  writeJSON(commentsPath, comments);
+  res.json({ message: 'Comentário deletado com sucesso.' });
+});

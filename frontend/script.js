@@ -1,4 +1,3 @@
-// script.js
 if (localStorage.getItem('logado') !== 'true') {
   window.location.href = 'index.html';
 }
@@ -139,8 +138,16 @@ async function getReceitaDetalhes(id) {
 
     const comentariosHtml = comentarios
       .map(
-        c =>
-          `<p><strong>${c.username}</strong> (${new Date(c.date).toLocaleString()}):<br/>${c.text}</p>`
+        (c, index) => `
+        <div class="comentario">
+          <p><strong>${c.username}</strong> (${new Date(c.date).toLocaleString()}):</p>
+          <p id="texto-comentario-${index}">${c.text}</p>
+          ${c.username === username ? `
+            <button onclick="editarComentario('${id}', ${index})">Editar</button>
+            <button onclick="deletarComentario('${id}', ${index})">Excluir</button>
+          ` : ''}
+        </div>
+      `
       )
       .join('') || '<p>Seja o primeiro a comentar!</p>';
 
@@ -189,6 +196,60 @@ async function getReceitaDetalhes(id) {
   }
   loading.style.display = 'none';
 }
+
+window.deletarComentario = async (recipeId, commentIndex) => {
+  if (!confirm('Deseja realmente excluir este comentário?')) return;
+  try {
+    const res = await fetch(`http://localhost:3000/api/comments/${recipeId}/${commentIndex}`, {
+      method: 'DELETE'
+    });
+    if (res.ok) {
+      alert('Comentário excluído!');
+      getReceitaDetalhes(recipeId);
+    } else {
+      alert('Erro ao excluir comentário.');
+    }
+  } catch {
+    alert('Erro de conexão ao excluir comentário.');
+  }
+};
+
+window.editarComentario = (recipeId, commentIndex) => {
+  const pTexto = document.getElementById(`texto-comentario-${commentIndex}`);
+  const textoAtual = pTexto.textContent;
+
+  // Substituir texto por textarea para edição
+  pTexto.outerHTML = `
+    <textarea id="textarea-editar-${commentIndex}">${textoAtual}</textarea>
+    <button id="salvar-edicao-${commentIndex}">Salvar</button>
+    <button id="cancelar-edicao-${commentIndex}">Cancelar</button>
+  `;
+
+  document.getElementById(`salvar-edicao-${commentIndex}`).onclick = async () => {
+    const novoTexto = document.getElementById(`textarea-editar-${commentIndex}`).value.trim();
+    if (!novoTexto) return alert('Comentário não pode ficar vazio.');
+
+    try {
+      const res = await fetch(`http://localhost:3000/api/comments/${recipeId}/${commentIndex}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: novoTexto }),
+      });
+      if (res.ok) {
+        alert('Comentário atualizado!');
+        getReceitaDetalhes(recipeId);
+      } else {
+        alert('Erro ao atualizar comentário.');
+      }
+    } catch {
+      alert('Erro de conexão ao atualizar comentário.');
+    }
+  };
+
+  document.getElementById(`cancelar-edicao-${commentIndex}`).onclick = () => {
+    getReceitaDetalhes(recipeId);
+  };
+};
 
 async function carregarPorCategoria(categoria) {
   loading.style.display = 'block';
