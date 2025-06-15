@@ -1,0 +1,84 @@
+openapi: 3.0.0
+info:
+  title: API - Sua Receita
+  version: 1.0.0
+  description: API para cadastro, login e comentários de receitas
+servers:
+  - url: http://localhost:3000
+
+paths:
+  /api/register:
+    post:
+      summary: Cadastro de novo usuário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '201':
+          description: Cadastro realizado
+        '400':
+          description: Usuário já existe
+
+  /api/login:
+    post:
+      summary: Login do usuário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Login bem-sucedido
+        '401':
+          description: Usuário ou senha inválidos
+
+  /api/comments/{id}:
+    get:
+      summary: Listar comentários de uma receita
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lista de comentários
+
+    post:
+      summary: Adicionar comentário à receita
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                text:
+                  type: string
+      responses:
+        '201':
+          description: Comentário adicionado

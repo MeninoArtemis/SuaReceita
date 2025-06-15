@@ -1,3 +1,6 @@
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load('./swagger.yaml');
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
@@ -5,9 +8,11 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const PORT = 3000;
+console.log('Swagger carregado:', swaggerDocument.info.title); // adicionado para verificar se o Swagger está carregado corretamente
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 const usuariosPath = path.join(__dirname, 'usuarios.json');
 const commentsPath = path.join(__dirname, 'comments.json');
@@ -64,7 +69,12 @@ app.post('/api/comments/:id', (req, res) => {
   writeJSON(commentsPath, comments);
   res.status(201).json(newComment);
 });
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
+});
+
+document.getElementById('logoutBtn').addEventListener('click', function() {
+  window.location.href = "login.html"; // ou o caminho correto do seu login
 });

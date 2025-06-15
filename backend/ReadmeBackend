@@ -1,0 +1,25 @@
+///// Rodar o Login /////
+
+No prompt de comando "CD nome da pasta do projeto"
+
+Após isso "CD Backend" que é o local em que serão baixados os packages do node;
+
+Logo após, "npm init -y" ele vai conferir as pastas por exemplo Nome, versão e licensas;
+
+continuamente, efetuar o comando "npm install express cors" aqui serão baixados os arquivos package.json;
+
+Por fim, "npm start" ao confirmar deverá aparecer a seguinte mensagem: Server running on http://localhost:3000, após isso o login para o site estará ativo e rodando perfeitamente.
+
+
+///// Rodando Swagger /////
+
+Alteração no package-json, na linha 5 constou "start": "node index.js" quando o correto é "start": "node backend/index.js", correção realizada.
+
+Para rodar o projeto pelo Swagger foram feito os comandos no prompt:
+
+    1. npm install swagger-ui-express swagger-jsdoc (também realizamos a inserção do "npm install yamljs" pelo powershell já direcioando no cd backend);
+
+    2. Após adicionado todos os packages foi realizado o comando node backend/index.js (também realizei através do powershell o "node index.js"), continuamente, aparecerá "Swagger carregado: API - Sua Receita
+    Server running on http://localhost:3000", projeto rodando em Swagger com sucesso.
+
+Ainda sobre Swagger, foi adicionado a linha 11 no index.js o "console.log('Swagger carregado:'swaggerDocument.info.title);" a seguinte linha confirma se o projeto está realmente rodando após o comando do item do 2 do Swagger.

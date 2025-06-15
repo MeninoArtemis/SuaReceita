@@ -1,0 +1,20 @@
+{
+  "name": "suareceita",
+  "version": "1.0.0",
+  "description": "Sua Receita - Projeto de Site de Receitas\r Descrição\r O \"Sua Receita\" é um site de receitas culinárias, onde os usuários podem explorar, cadastrar e compartilhar receitas de maneira fácil e interativa. O site permite que os usuários busquem receitas, visualizem detalhes, façam comentários e compartilhem suas criações em suas redes sociais.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {}
+}
